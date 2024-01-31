@@ -3,11 +3,22 @@ import {Burger} from "@/types";
 
 const BurgerCard: React.FC<{ burger: Burger }> = ({burger}) => {
     return (
-        <div className="rounded overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-105">
+        <div className="
+                        flex
+                        flex-col
+                        rounded
+                        overflow-hidden
+                        shadow-lg
+                        bg-white
+                        transition-transform
+                        duration-300
+                        hover:scale-105
+                        h-full
+                        ">
             <img className="w-full h-64 object-cover" src={burger.image} alt={burger.name}/>
-            <div className="px-6 py-4">
+            <div className="px-6 py-4 flex-grow">
                 <div className="font-bold text-xl mb-2 text-slate-950">{burger.name}</div>
-                <p className="text-gray-700 text-base">
+                <p className="text-gray-700 text-base overflow-ellipsis overflow-hidden">
                     {burger.description}
                 </p>
             </div>
