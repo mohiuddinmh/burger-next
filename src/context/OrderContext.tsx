@@ -14,7 +14,15 @@ type OrderContextType = {
     removeCartItem: (burgerId: string) => void;
 }
 
-const OrderContext = createContext<OrderContextType>(undefined);
+const OrderContext = createContext<OrderContextType>({
+    cartItems: [],
+    addCartItem: () => {
+        console.warn('addCartItem function not implemented');
+    },
+    removeCartItem: () => {
+        console.warn('removeCartItem function not implemented');
+    },
+});
 
 export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);

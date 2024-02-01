@@ -6,7 +6,6 @@ import {useOrderContext} from "@/context/OrderContext";
 const Cart: React.FC = () => {
     const {cartItems, removeCartItem} = useOrderContext()
 
-
     return (
         <div className="max-w-4xl mx-auto mt-10 p-4 shadow-lg rounded-lg">
             <h2 className="text-3xl font-bold mb-6">Shopping Cart</h2>
