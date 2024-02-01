@@ -29,8 +29,19 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({children
 
     // Function to add a burger to the order
     const addCartItem = (burger: Burger, quantity: number) => {
-        setCartItems((prevCartItems) => [...prevCartItems, {burger, quantity}]);
+        setCartItems((prevCartItems) => {
+            const existingCartItem = prevCartItems.find(item => item.burger.id === burger.id);
+
+            if (existingCartItem) {
+                return prevCartItems.map(item =>
+                    item.burger.id === burger.id ? {...item, quantity: item.quantity + quantity} : item
+                );
+            } else {
+                return [...prevCartItems, {burger, quantity}];
+            }
+        });
     };
+
 
     // Function to remove a burger from the order by its id
     const removeCartItem = (burgerId: string) => {
