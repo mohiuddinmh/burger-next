@@ -2,13 +2,20 @@
 
 import React from "react";
 import {useOrderContext} from "@/context/OrderContext";
+import {useRouter} from "next/navigation";
 
 const Cart: React.FC = () => {
     const {cartItems, removeCartItem} = useOrderContext()
-
+    const router = useRouter()
     const handlePlaceOrder = () => {
+        alert("Thank you!!")
     }
-    
+
+
+    const handleAddMoreItems = () => {
+        router.push("/")
+    }
+
     return (
         <div className="max-w-4xl mx-auto mt-10 p-4 shadow-lg rounded-lg">
             <h2 className="text-3xl font-bold mb-6">Shopping Cart</h2>
@@ -38,9 +45,16 @@ const Cart: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-6 flex justify-center">
+                    <div className="mt-6 flex justify-center space-x-4"> {/* Adjusted for spacing between buttons */}
                         <button
-                            onClick={handlePlaceOrder}
+                            onClick={handleAddMoreItems} // Assuming this is the correct handler
+                            className="px-6 py-2 bg-blue-300 text-white font-bold rounded hover:bg-blue-400 transition duration-300"
+                        >
+                            Add More Items
+                        </button>
+
+                        <button
+                            onClick={handlePlaceOrder} // Assuming this is the correct handler
                             className="px-6 py-2 bg-yellow-500 text-white font-bold rounded hover:bg-yellow-600 transition duration-300"
                         >
                             Place Order
@@ -52,7 +66,6 @@ const Cart: React.FC = () => {
             )}
         </div>
     )
-
 }
 
 export default Cart
