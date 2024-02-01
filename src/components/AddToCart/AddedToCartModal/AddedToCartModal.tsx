@@ -1,25 +1,25 @@
-import React from "react";
-import {useRouter} from "next/navigation";
+import React from "react"
+import {useRouter} from "next/navigation"
 
 const AddToCartModal: React.FC<{
     isOpen: boolean;
     onClose: () => void;
 }> = ({isOpen, onClose}) => {
 
-    const router = useRouter();
+    const router = useRouter()
 
     const handleAddMoreItemsClick = () => {
-        onClose();
-        router.push('/');
-    };
+        onClose()
+        router.push('/')
+    }
 
     const handleGoToCartClick = () => {
-        onClose();
-        router.push('/cart');
-    };
+        onClose()
+        router.push('/cart')
+    }
 
     if (!isOpen) {
-        return null;
+        return null
     }
 
     return (
@@ -41,7 +41,7 @@ const AddToCartModal: React.FC<{
                 </button>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default AddToCartModal;
+export default AddToCartModal

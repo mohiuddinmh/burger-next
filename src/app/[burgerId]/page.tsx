@@ -1,7 +1,7 @@
-import React from "react";
-import {getBurgers} from "@/services/burgerService";
-import AddToCart from "@/components/AddToCart/AddToCart";
-import Link from "next/link";
+import React from "react"
+import {getBurgers} from "@/services/burgerService"
+import AddToCart from "@/components/AddToCart/AddToCart"
+import Link from "next/link"
 
 const BurgerDetail: React.FC<{ params: { burgerId: string } }> = async ({params: {burgerId}}) => {
     const {burgers} = await getBurgers()

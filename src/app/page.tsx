@@ -1,7 +1,7 @@
-import React from "react";
-import BurgerCard from "@/components/BurgerCard/BurgerCard";
-import Link from "next/link";
-import {getBurgers} from "@/services/burgerService";
+import React from "react"
+import BurgerCard from "@/components/BurgerCard/BurgerCard"
+import Link from "next/link"
+import {getBurgers} from "@/services/burgerService"
 
 const Home: React.FC = async () => {
     const {burgers} = await getBurgers()
@@ -15,6 +15,6 @@ const Home: React.FC = async () => {
                 ))}
             </div>
         </main>
-    );
+    )
 }
 export default Home

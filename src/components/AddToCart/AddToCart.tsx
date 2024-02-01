@@ -1,20 +1,20 @@
 'use client'
 
-import React, {useState} from "react";
-import {Burger} from "@/types";
-import {useOrderContext} from "@/context/OrderContext";
-import AddedToCartModal from "@/components/AddToCart/AddedToCartModal/AddedToCartModal";
+import React, {useState} from "react"
+import {Burger} from "@/types"
+import {useOrderContext} from "@/context/OrderContext"
+import AddedToCartModal from "@/components/AddToCart/AddedToCartModal/AddedToCartModal"
 
 const AddToCart: React.FC<{ burger: Burger }> = ({burger}) => {
     const {addCartItem} = useOrderContext()
-    const [count, setCount] = useState(1);
-    const [showModal, setShowModal] = useState(false);
+    const [count, setCount] = useState(1)
+    const [showModal, setShowModal] = useState(false)
 
 
     const handleAddToCart = () => {
         addCartItem(burger, count)
-        setShowModal(true);
-    };
+        setShowModal(true)
+    }
 
     return (
         <div className="flex items-center space-x-2">
