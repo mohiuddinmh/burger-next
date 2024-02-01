@@ -1,5 +1,6 @@
 import React from "react";
 import {getBurgers} from "@/services/burgerService";
+import AddToCart from "@/components/AddToCart/AddToCart";
 
 const BurgerDetail: React.FC<{ params: { burgerId: string } }> = async ({params: {burgerId}}) => {
     const {burgers} = await getBurgers()
@@ -21,6 +22,8 @@ const BurgerDetail: React.FC<{ params: { burgerId: string } }> = async ({params:
                     <span
                         className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Calories: {burger.calorie}</span>
                 </div>
+
+                <AddToCart burger={burger}/>
             </div>
         )}
     </div>
