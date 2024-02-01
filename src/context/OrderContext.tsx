@@ -14,7 +14,7 @@ type OrderContextType = {
     removeCartItem: (burgerId: string) => void;
 }
 
-const OrderContext = createContext<OrderContextType | undefined>(undefined);
+const OrderContext = createContext<OrderContextType>(undefined);
 
 export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -36,10 +36,4 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({children
     );
 };
 
-export const useOrderContext = () => {
-    const context = useContext(OrderContext);
-    if (context === undefined) {
-        throw new Error('useOrder must be used within an OrderProvider');
-    }
-    return context;
-};
+export const useOrderContext = () => useContext(OrderContext);

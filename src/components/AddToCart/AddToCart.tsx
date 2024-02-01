@@ -8,16 +8,12 @@ const AddToCart: React.FC<{ burger: Burger }> = ({burger}) => {
     const {addCartItem} = useOrderContext()
     const [count, setCount] = useState(1);
 
-
     const handleAddToCart = () => {
-        // Ideally, you would also update the cart state or make an API call to add the burger to the cart
-        console.log(`Adding ${burger.name} to cart`);
         addCartItem(burger, count)
     };
 
     return (
         <div className="flex items-center space-x-2">
-            {/* Decrease and Increase buttons with minimalistic design */}
             <button
                 aria-label="Decrease quantity"
                 className="text-gray-600 hover:text-gray-800"
@@ -29,7 +25,6 @@ const AddToCart: React.FC<{ burger: Burger }> = ({burger}) => {
                 </svg>
             </button>
 
-            {/* Display the count */}
             <span className="text-sm font-medium">{count}</span>
 
             <button
@@ -43,7 +38,6 @@ const AddToCart: React.FC<{ burger: Burger }> = ({burger}) => {
                 </svg>
             </button>
 
-            {/* Add to Cart Button with a minimalistic design */}
             <button
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
                 onClick={handleAddToCart}
