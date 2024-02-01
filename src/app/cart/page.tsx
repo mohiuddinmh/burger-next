@@ -29,12 +29,12 @@ const Cart: React.FC = () => {
                                          className="h-16 w-16 object-cover rounded mr-4"/>
                                     <div>
                                         <h3 className="text-lg font-semibold">{item.burger.name}</h3>
-                                        <p className="text-gray-600">${item.burger.price / 100} each</p>
+                                        <p className="text-gray-600">${item.burger.price} each</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center">
                                     <span className="text-sm font-medium mr-4">Qty: {item.quantity}</span>
-                                    <span className="font-bold">${(item.burger.price / 100) * item.quantity}</span>
+                                    <span className="font-bold">${(item.burger.price) * item.quantity}</span>
                                 </div>
                                 <button
                                     className="ml-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition duration-300"

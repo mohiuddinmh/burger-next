@@ -9,5 +9,10 @@ export const getBurgers = async (): Promise<{ burgers: Burger[] }> => {
 
     const data = await response.json()
 
-    return {burgers: data.products};
+    return {
+        burgers: data.products.map((product: Burger) => ({
+            ...product,
+            price: product.price / 100
+        }))
+    };
 }
